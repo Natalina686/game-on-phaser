@@ -11,6 +11,11 @@ gameScene.init = function() {
   this.enemyMinY = 80;
 }
 
+// next try
+
+var scoreText;
+var score = 0;
+
 // load asset files for our game
 gameScene.preload = function() {
 
@@ -47,7 +52,7 @@ gameScene.create = function() {
     setXY: {
       x: 210,
       y: 200,
-      stepX: 110,
+      stepX: 120,
       stepY: 150
     }
   });
@@ -57,7 +62,7 @@ gameScene.create = function() {
 
   // set speeds
   Phaser.Actions.Call(this.enemies.getChildren(), function(enemy) {
-    enemy.speed = Math.random() * 1.2 + 1;
+    enemy.speed = Math.random() * 1.2 + 0.5;
   }, this);
 
   // player is alive
@@ -65,7 +70,14 @@ gameScene.create = function() {
 
   // reset camera
   this.cameras.main.resetFX();
+  // this.createScore();
 };
+
+// const createScore = (() => {
+//   this.score = 0;
+//   let style = { font: "20px Arial", fill: "#fff" }
+//   this.scoreText = this.add.text(20, 20, "score: " + this.score, style);
+// });
 
 // executed on every frame (60 times per second)
 gameScene.update = function() {
