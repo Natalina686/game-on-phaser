@@ -2,6 +2,7 @@
 // create a new scene named "Game"
 let gameScene = new Phaser.Scene('Game');
 
+export class Game extends Phaser.Scene {gameScene}
 
 // some parameters for our scene
 gameScene.init = function() {
@@ -11,10 +12,6 @@ gameScene.init = function() {
   this.enemyMinY = 80;
 }
 
-// next try
-
-var scoreText;
-var score = 0;
 
 // load asset files for our game
 gameScene.preload = function() {
@@ -144,13 +141,13 @@ gameScene.gameOver = function() {
 
 
 
-// our game's configuration
-let config = {
-  type: Phaser.AUTO,
-  width: 940,
-  height: 360,
-  scene: gameScene
-};
+// // our game's configuration
+// let config = {
+//   type: Phaser.AUTO,
+//   width: 940,
+//   height: 360,
+//   scene: gameScene
+// };
 
-// create the game, and pass it the configuration
-let game = new Phaser.Game(config);
+// // create the game, and pass it the configuration
+// let game = new Phaser.Game(config);
